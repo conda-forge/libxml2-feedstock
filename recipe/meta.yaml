@@ -5,31 +5,37 @@ package:
     version: {{ version }}
 
 source:
-    fn: libxml2-{{ version }}.tar.xz
-    url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.xz
-    md5: 59d281614c87d0c767134c55de20a8a9
+    fn: libxml2-{{ version }}.tar.gz
+    url: ftp://xmlsoft.org/libxml2/libxml2-{{ version }}.tar.gz
+    sha256: 4de9e31f46b44d34871c22f54bfc54398ef124d6f7cafb1f4a5958fbcd3ba12d
 
 build:
     number: 5
-    skip: True  # [win]
+    features:
+        - vc9     # [win and py27]
+        - vc10    # [win and py34]
+        - vc14    # [win and py35]
 
 requirements:
     build:
-        - autoconf
-        - automake
-        - libtool
-        - pkg-config
-        - icu
-        - libiconv
+        - python  # [win]
+        - autoconf  # [not win]
+        - automake  # [not win]
+        - libtool  # [not win]
+        - pkg-config  # [not win]
+        - icu  # [not win]
+        - libiconv  # [not win]
         - zlib
         - xz 5.0.*  # [not win]
     run:
-        - icu
-        - libiconv
+        - icu  # [not win]
+        - libiconv  # [not win]
         - zlib
         - xz 5.0.*  # [not win]
 
 test:
+    requires:
+        - python {{ environ['PY_VER'] + '*' }}  # [win]
     files:
         - test.xml
     commands:
@@ -44,3 +50,4 @@ extra:
     recipe-maintainers:
         - ocefpaf
         - jakirkham
+        - msarahan
