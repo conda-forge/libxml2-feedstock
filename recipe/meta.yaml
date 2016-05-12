@@ -10,7 +10,7 @@ source:
     md5: 59d281614c87d0c767134c55de20a8a9
 
 build:
-    number: 5
+    number: 6
     skip: True  # [win]
 
 requirements:
@@ -19,14 +19,14 @@ requirements:
         - automake
         - libtool
         - pkg-config
-        - icu
+        - icu 56.*
         - libiconv
-        - zlib
+        - zlib 1.2*
         - xz 5.0.*  # [not win]
     run:
         - icu
         - libiconv
-        - zlib
+        - zlib 1.2*
         - xz 5.0.*  # [not win]
 
 test:
@@ -34,6 +34,7 @@ test:
         - test.xml
     commands:
         - xmllint test.xml
+        - conda inspect linkages -n _test libxml2  # [linux]
 
 about:
     home: http://xmlsoft.org/
