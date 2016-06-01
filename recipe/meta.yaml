@@ -19,7 +19,7 @@ requirements:
         - automake
         - libtool
         - pkg-config
-        - icu 56.* 56.*
+        - icu 56.*
         - libiconv
         - zlib 1.2.*
         - xz 5.0.*  # [not win]
