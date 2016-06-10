@@ -5,9 +5,9 @@ package:
     version: {{ version }}
 
 source:
-    fn: libxml2-{{ version }}.tar.xz
-    url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.xz
-    md5: 59d281614c87d0c767134c55de20a8a9
+    fn: libxml2-{{ version }}.tar.gz
+    url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz
+    md5: 0fea8d715ce177534b1abb6ba8880140
 
 build:
     number: 7
