@@ -26,12 +26,12 @@ requirements:
         - icu 56.*  # [not win]
         - libiconv
         - zlib 1.2.*
-        - xz 5.0.*  # [not win]
+        - xz 5.2.*  # [not win]
     run:
         - icu 56.*  # [not win]
         - libiconv
         - zlib 1.2.*
-        - xz 5.0.*  # [not win]
+        - xz 5.2.*  # [not win]
 
 test:
     requires:
