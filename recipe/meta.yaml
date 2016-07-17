@@ -10,7 +10,7 @@ source:
     md5: 0fea8d715ce177534b1abb6ba8880140
 
 build:
-    number: 8
+    number: 9
     features:
         - vc9  # [win and py27]
         - vc10  # [win and py34]
@@ -26,12 +26,12 @@ requirements:
         - icu 56.*  # [not win]
         - libiconv
         - zlib 1.2.*
-        - xz 5.0.*  # [not win]
+        - xz 5.2.*  # [not win]
     run:
         - icu 56.*  # [not win]
         - libiconv
         - zlib 1.2.*
-        - xz 5.0.*  # [not win]
+        - xz 5.2.*  # [not win]
 
 test:
     requires:
