@@ -7,10 +7,10 @@ package:
 source:
     fn: libxml2-{{ version }}.tar.gz
     url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz
-    md5: 0fea8d715ce177534b1abb6ba8880140
+    sha256: 473e8a80775f796a6ae8e44138a14081d21a93b38251af76e5a149afb94e980d
 
 build:
-    number: 9
+    number: 10
     features:
         - vc9  # [win and py27]
         - vc10  # [win and py34]
@@ -26,12 +26,10 @@ requirements:
         - icu 56.*  # [not win]
         - libiconv
         - zlib 1.2.*
-        - xz 5.2.*  # [not win]
     run:
         - icu 56.*  # [not win]
         - libiconv
         - zlib 1.2.*
-        - xz 5.2.*  # [not win]
 
 test:
     requires:
@@ -40,12 +38,12 @@ test:
         - test.xml
     commands:
         - xmllint test.xml
-        - conda inspect linkages -n _test libxml2  # [linux]
+        - conda inspect linkages -n _test libxml2  # [not win]
 
 about:
     home: http://xmlsoft.org/
     license: MIT
-    summary: The XML C parser and toolkit of Gnome
+    summary: 'The XML C parser and toolkit of Gnome.'
 
 extra:
     recipe-maintainers:

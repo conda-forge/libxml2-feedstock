@@ -12,7 +12,7 @@ fi
             --with-iconv="${PREFIX}" \
             --with-zlib="${PREFIX}" \
             --with-icu \
-            --with-lzma="${PREFIX}" \
+            --without-lzma \
             --without-python
 make
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib make check
