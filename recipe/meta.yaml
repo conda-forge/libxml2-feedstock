@@ -8,6 +8,8 @@ source:
     fn: libxml2-{{ version }}.tar.gz
     url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz
     sha256: 1d5257abac02aab323bf6ab26199ce0bb2a7b798bb7acea302e136438237268a
+    patches:
+        - pre-c99.patch  # Bug 767063 - Fix build of libxml2 2.9.4 (git master) on pre-C99 compilers
 
 build:
     number: 0
