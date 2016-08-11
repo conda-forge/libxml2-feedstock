@@ -1,4 +1,4 @@
-{% set version = "2.9.3" %}
+{% set version = "2.9.4" %}
 
 package:
     name: libxml2
@@ -7,10 +7,12 @@ package:
 source:
     fn: libxml2-{{ version }}.tar.gz
     url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz
-    md5: 0fea8d715ce177534b1abb6ba8880140
+    sha256: 1d5257abac02aab323bf6ab26199ce0bb2a7b798bb7acea302e136438237268a
+    patches:
+        - pre-c99.patch  # Bug 767063 - Fix build of libxml2 2.9.4 (git master) on pre-C99 compilers
 
 build:
-    number: 9
+    number: 0
     features:
         - vc9  # [win and py27]
         - vc10  # [win and py34]
