@@ -9,10 +9,11 @@ source:
     url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz
     sha256: 1d5257abac02aab323bf6ab26199ce0bb2a7b798bb7acea302e136438237268a
     patches:
-        - pre-c99.patch  # Bug 767063 - Fix build of libxml2 2.9.4 (git master) on pre-C99 compilers
+        # Bug 767063 - Fix build of libxml2 2.9.4 (git master) on pre-C99 compilers.
+        - pre-c99.patch
 
 build:
-    number: 0
+    number: 1
     features:
         - vc9  # [win and py27]
         - vc10  # [win and py34]
