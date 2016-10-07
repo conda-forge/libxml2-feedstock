@@ -13,7 +13,7 @@ source:
         - pre-c99.patch
 
 build:
-    number: 1
+    number: 2
     features:
         - vc9  # [win and py27]
         - vc10  # [win and py34]
@@ -43,7 +43,7 @@ test:
         - test.xml
     commands:
         - xmllint test.xml
-        - conda inspect linkages -n _test libxml2  # [linux]
+        #- conda inspect linkages -p $PREFIX libxml2  # [not win]
 
 about:
     home: http://xmlsoft.org/
