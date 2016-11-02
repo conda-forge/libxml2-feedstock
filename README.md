@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: The XML C parser and toolkit of Gnome
+Summary: The XML C parser and toolkit of Gnome.
 
 
 
