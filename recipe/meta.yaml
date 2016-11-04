@@ -11,9 +11,11 @@ source:
   patches:
     # Bug 767063 - Fix build of libxml2 2.9.4 (git master) on pre-C99 compilers.
     - pre-c99.patch
+    # https://bugzilla.gnome.org/show_bug.cgi?id=766834
+    - fix-attribute-decoding-during-xml-schema-validation.patch
 
 build:
-  number: 2
+  number: 3
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
@@ -53,6 +55,7 @@ test:
 about:
   home: http://xmlsoft.org/
   license: MIT
+  license_file: Copyright
   summary: 'The XML C parser and toolkit of Gnome.'
 
 extra:
@@ -60,3 +63,4 @@ extra:
     - ocefpaf
     - jakirkham
     - gillins
+    - jschueller
