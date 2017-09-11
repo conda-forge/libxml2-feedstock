@@ -1,4 +1,4 @@
-{% set version = "2.9.4" %}
+{% set version = "2.9.5" %}
 
 package:
   name: libxml2
@@ -7,16 +7,11 @@ package:
 source:
   fn: libxml2-{{ version }}.tar.gz
   url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz
-  sha256: 1d5257abac02aab323bf6ab26199ce0bb2a7b798bb7acea302e136438237268a
-  patches:
-    # Bug 767063 - Fix build of libxml2 2.9.4 (git master) on pre-C99 compilers.
-    - pre-c99.patch
-    # https://bugzilla.gnome.org/show_bug.cgi?id=766834
-    - fix-attribute-decoding-during-xml-schema-validation.patch
+  sha256: 7aaf3e1f03317231864f833eea25a30721cc7b434884e089cc3a021b6d58f60c
 
 build:
-  number: 4
-  skip: True  # [win and [py>35]
+  number: 0
+  skip: true  # [win and py>35]
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
