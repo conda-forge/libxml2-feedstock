@@ -5,17 +5,15 @@ package:
   version: {{ version }}
 
 source:
-  fn: libxml2-{{ version }}.tar.gz
   url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz
   sha256: 7aaf3e1f03317231864f833eea25a30721cc7b434884e089cc3a021b6d58f60c
 
 build:
   number: 0
-  skip: true  # [win and py>35]
+  skip: True  # [win and py36]
   features:
     - vc9  # [win and py27]
-    - vc10  # [win and py34]
-    - vc14  # [win and py>=35]
+    - vc14  # [win and (py35 or py36)]
 
 requirements:
   build:
@@ -26,19 +24,17 @@ requirements:
     - pkg-config  # [not win]
     - icu 58.*  # [not win]
     - libiconv
-    - zlib 1.2.*
+    - zlib 1.2.11
     - xz 5.2.*  # [not win]
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py>=35]
+    - vc 14  # [win and (py35 or py36)]
   run:
     - icu 58.*  # [not win]
     - libiconv
-    - zlib 1.2.*
+    - zlib 1.2.11
     - xz 5.2.*  # [not win]
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
+    - vc 14  # [win and (py35 or py36)]
 
 test:
   files:
