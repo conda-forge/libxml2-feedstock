@@ -9,7 +9,7 @@ source:
   sha256: 7aaf3e1f03317231864f833eea25a30721cc7b434884e089cc3a021b6d58f60c
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and py36]
   features:
     - vc9  # [win and py27]
@@ -41,8 +41,8 @@ test:
     - test.xml
   commands:
     - xmllint test.xml
-    - conda inspect linkages -p $PREFIX libxml2  # [not win]
-    - conda inspect objects -p $PREFIX libxml2  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://xmlsoft.org/
