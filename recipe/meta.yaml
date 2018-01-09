@@ -1,4 +1,4 @@
-{% set version = "2.9.5" %}
+{% set version = "2.9.7" %}
 
 package:
   name: libxml2
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz
-  sha256: 7aaf3e1f03317231864f833eea25a30721cc7b434884e089cc3a021b6d58f60c
+  sha256: a7b52278afca823d263deb8b4b33710735f1b5208a351173b2deb78a6d936412
 
 build:
-  number: 2
+  number: 0
   skip: True  # [win and py36]
   features:
     - vc9  # [win and py27]
