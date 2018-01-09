@@ -14,6 +14,6 @@ fi
             --with-icu \
             --with-lzma="${PREFIX}" \
             --without-python
-make
+make -j${CPU_COUNT}
 eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib make check
 make install
