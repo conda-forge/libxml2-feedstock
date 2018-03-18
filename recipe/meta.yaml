@@ -10,9 +10,9 @@ source:
 
 build:
   number: 0
-  skip: True  # [win and py36]
+  # vc 9 probably need some patches, skipping it for now.
+  skip: True  # [(win and py27) or (win and py36)]
   features:
-    - vc9  # [win and py27]
     - vc14  # [win and (py35 or py36)]
 
 requirements:
