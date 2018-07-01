@@ -5,36 +5,38 @@ package:
   version: {{ version }}
 
 source:
-  url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz
-  sha256: ff879b0d9142564bfe63df9753df936f05150afdd7bae07261f12d4dad33ba4a
+  url: ftp://xmlsoft.org/libxml2/libxml2-{{ version }}.tar.gz
+  sha256: 0b74e51595654f958148759cfef0993114ddccccbb6f31aee018f3558e8e2732
+  patches:
+    # Some C99 that vs2008 can't cope with
+    - 0001-C89-for-VS2008.patch
+    - 0004-CVE-2017-8872.patch
 
 build:
-  number: 0
-  # vc 9 probably need some patches, skipping it for now.
-  skip: True  # [(win and py27) or (win and py36)]
-  features:
-    - vc14  # [win and (py35 or py36)]
+  number: 1
+  run_exports:
+    # remove symbols at minor versions.
+    #    https://abi-laboratory.pro/tracker/timeline/libxml2/
+    - {{ pin_subpackage('libxml2', max_pin='x.x') }}
 
 requirements:
   build:
-    - python  # [win]
+    - {{ compiler('c') }}
     - autoconf  # [not win]
     - automake  # [not win]
     - libtool  # [not win]
     - pkg-config  # [not win]
-    - icu 58.*  # [not win]
-    - libiconv 1.15
-    - zlib 1.2.11
-    - xz 5.2.*  # [not win]
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
+    - make  # [not win]
+  host:
+    - icu  # [not win]
+    - libiconv  # [not linux]
+    - xz  # [not win]
+    - zlib
   run:
-    - icu 58.*  # [not win]
-    - libiconv 1.15
-    - zlib 1.2.11
-    - xz 5.2.*  # [not win]
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
+    - icu  # [not win]
+    - libiconv  # [not linux]
+    - xz  # [not win]
+    - zlib
 
 test:
   files:
@@ -47,8 +49,15 @@ test:
 about:
   home: http://xmlsoft.org/
   license: MIT
+  license_family: MIT
   license_file: Copyright
-  summary: 'The XML C parser and toolkit of Gnome.'
+  summary: The XML C parser and toolkit of Gnome
+  description: |
+     Though libxml2 is written in C a variety of language
+     bindings make it available in other environments.
+  doc_url: http://xmlsoft.org/html/index.html
+  doc_source_url: https://github.com/GNOME/libxml2/blob/master/doc/index.html
+  dev_url: https://git.gnome.org/browse/libxml2/
 
 extra:
   recipe-maintainers:
@@ -56,3 +65,4 @@ extra:
     - jakirkham
     - gillins
     - jschueller
+    - msarahan
