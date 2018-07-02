@@ -7,21 +7,25 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: The XML C parser and toolkit of Gnome.
+Summary: The XML C parser and toolkit of Gnome
 
+Though libxml2 is written in C a variety of language
+bindings make it available in other environments.
 
 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/libxml2-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/libxml2-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/libxml2-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/libxml2-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/libxml2-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/libxml2-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/libxml2-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/libxml2-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/libxml2-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/libxml2-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/libxml2-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/libxml2-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libxml2/badges/version.svg)](https://anaconda.org/conda-forge/libxml2)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libxml2/badges/downloads.svg)](https://anaconda.org/conda-forge/libxml2)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libxml2-green.svg)](https://anaconda.org/conda-forge/libxml2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libxml2.svg)](https://anaconda.org/conda-forge/libxml2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libxml2.svg)](https://anaconda.org/conda-forge/libxml2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libxml2.svg)](https://anaconda.org/conda-forge/libxml2) |
 
 Installing libxml2
 ==================
