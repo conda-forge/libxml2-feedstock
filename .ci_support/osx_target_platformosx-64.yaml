@@ -1,11 +1,17 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 VERBOSE_AT:
 - V=1
 c_compiler:
-- vs2015
+- toolchain_c
 icu:
 - '58'
 libiconv:
 - '1.15'
+macos_machine:
+- x86_64-apple-darwin13.4.0
+macos_min_version:
+- '10.9'
 pin_run_as_build:
   icu:
     max_pin: x
@@ -15,6 +21,8 @@ pin_run_as_build:
     max_pin: x.x
   zlib:
     max_pin: x.x
+target_platform:
+- osx-64
 xz:
 - '5.2'
 zlib:
