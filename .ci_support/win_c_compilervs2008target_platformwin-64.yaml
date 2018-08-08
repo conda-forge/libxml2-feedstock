@@ -2,22 +2,14 @@ VERBOSE_AT:
 - V=1
 c_compiler:
 - vs2008
-icu:
-- '58'
 libiconv:
 - '1.15'
 pin_run_as_build:
-  icu:
-    max_pin: x
   libiconv:
-    max_pin: x.x
-  xz:
     max_pin: x.x
   zlib:
     max_pin: x.x
 target_platform:
 - win-64
-xz:
-- '5.2'
 zlib:
 - '1.2'
