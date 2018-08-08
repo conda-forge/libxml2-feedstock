@@ -19,3 +19,6 @@ make -j${CPU_COUNT} ${VERBOSE_AT}
 #   make check $VERBOSE_AT}
 # fi
 make install
+
+# remove libtool files
+find $PREFIX -name '*.la' -delete
