@@ -4,6 +4,8 @@ VERBOSE_AT:
 - V=1
 c_compiler:
 - gcc
+c_compiler_version:
+- '7'
 cdt_arch:
 - aarch64
 cdt_name:
