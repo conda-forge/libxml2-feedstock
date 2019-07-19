@@ -17,7 +17,7 @@ channel_targets:
 docker_image:
 - condaforge/linux-anvil-aarch64
 icu:
-- '60'
+- '64.2'
 libiconv:
 - '1.15'
 pin_run_as_build:
