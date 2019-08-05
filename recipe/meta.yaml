@@ -27,7 +27,7 @@ requirements:
     - make  # [not win]
   host:
     - icu  # [not win]
-    - libiconv # [not linux]
+    - libiconv  # [not linux]
     - xz  # [not win]
     - zlib
 
