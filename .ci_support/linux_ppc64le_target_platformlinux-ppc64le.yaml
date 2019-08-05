@@ -12,13 +12,9 @@ docker_image:
 - condaforge/linux-anvil-ppc64le
 icu:
 - '64.2'
-libiconv:
-- '1.15'
 pin_run_as_build:
   icu:
     max_pin: x
-  libiconv:
-    max_pin: x.x
   xz:
     max_pin: x.x
   zlib:
