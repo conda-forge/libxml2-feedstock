@@ -1,4 +1,4 @@
-{% set version = "2.9.9" %}
+{% set version = "2.9.10" %}
 
 package:
   name: libxml2
@@ -6,13 +6,13 @@ package:
 
 source:
   url: http://xmlsoft.org/sources/libxml2-{{ version }}.tar.gz
-  sha256: 94fb70890143e3c6549f265cee93ec064c80a84c42ad0f23e85ee1fd6540a871
+  sha256: aafee193ffb8fe0c82d4afef6ef91972cbaf5feea100edc2f262750611b4be1f
   patches:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
     - 0004-CVE-2017-8872.patch
 
 build:
-  number: 5
+  number: 0
   run_exports:
     # remove symbols at minor versions.
     #    https://abi-laboratory.pro/tracker/timeline/libxml2/
