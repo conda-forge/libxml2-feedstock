@@ -1,7 +1,7 @@
 VERBOSE_AT:
 - V=1
 c_compiler:
-- vs2015
+- vs2017
 channel_sources:
 - conda-forge,defaults
 channel_targets:

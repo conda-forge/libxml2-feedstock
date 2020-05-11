@@ -11,13 +11,13 @@ cdt_arch:
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge,c4aarch64,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 docker_image:
 - condaforge/linux-anvil-aarch64
 icu:
-- '64.2'
+- '67'
 libiconv:
 - '1.15'
 pin_run_as_build:
