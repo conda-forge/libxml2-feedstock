@@ -30,3 +30,4 @@ rmdir %LIBRARY_INC%\libxml2
 del %LIBRARY_PREFIX%\bin\test*.exe || exit 1
 del %LIBRARY_PREFIX%\bin\runsuite.exe || exit 1
 del %LIBRARY_PREFIX%\bin\runtest.exe || exit 1
+copy %LIBRARY_LIB%\libxml2.lib %LIBRARY_LIB%\xml2.lib || exit 1
