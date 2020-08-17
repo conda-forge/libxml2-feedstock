@@ -1,31 +1,19 @@
 VERBOSE_AT:
 - V=1
 c_compiler:
-- gcc
-c_compiler_version:
-- '8'
+- vs2017
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
-docker_image:
-- condaforge/linux-anvil-ppc64le
-icu:
-- '67'
 libiconv:
 - '1.16'
 pin_run_as_build:
-  icu:
-    max_pin: x
   libiconv:
-    max_pin: x.x
-  xz:
     max_pin: x.x
   zlib:
     max_pin: x.x
 target_platform:
-- linux-ppc64le
-xz:
-- '5.2'
+- win-64
 zlib:
 - '1.2'
