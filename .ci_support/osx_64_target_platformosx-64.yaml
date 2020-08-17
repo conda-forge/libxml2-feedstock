@@ -13,7 +13,7 @@ channel_targets:
 icu:
 - '67'
 libiconv:
-- '1.15'
+- '1.16'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
