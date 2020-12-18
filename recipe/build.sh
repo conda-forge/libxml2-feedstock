@@ -4,6 +4,10 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 
 ./autogen.sh
 
+# Define TRUE/FALSE via preprocessor flags for now (until upstream fixes it).
+# (Some (non-header) source files use them but not define them or include <stdbool.h> .)
+export CPPFLAGS="${CPPFLAGS} -DFALSE=0 -DTRUE=1"
+
 ./configure --prefix="${PREFIX}" \
             --build=${BUILD} \
             --host=${HOST} \
