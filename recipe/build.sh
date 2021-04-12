@@ -26,3 +26,10 @@ make -j${CPU_COUNT} ${VERBOSE_AT}
 #   make check $VERBOSE_AT}
 # fi
 make install
+
+# Remove large documentation files that can take up to 6.6/9.2MB of the install
+# size.
+# https://github.com/conda-forge/libxml2-feedstock/issues/57
+rm -rf ${PREFIX}/share/doc
+rm -rf ${PREFIX}/share/gtk-doc
+rm -rf ${PREFIX}/share/man
