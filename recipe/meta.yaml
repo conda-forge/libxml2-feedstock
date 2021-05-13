@@ -1,4 +1,4 @@
-{% set version = "2.9.10" %}
+{% set version = "2.9.11" %}
 
 package:
   name: libxml2
@@ -6,13 +6,13 @@ package:
 
 source:
   url: http://xmlsoft.org/sources/libxml2-{{ version }}.tar.gz
-  sha256: aafee193ffb8fe0c82d4afef6ef91972cbaf5feea100edc2f262750611b4be1f
+  sha256: 886f696d5d5b45d780b2880645edf9e0c62a4fd6841b853e824ada4e02b4d331
   patches:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
     - 0004-CVE-2017-8872.patch
 
 build:
-  number: 4
+  number: 0
   run_exports:
     # remove symbols at minor versions.
     #    https://abi-laboratory.pro/tracker/timeline/libxml2/
@@ -52,8 +52,8 @@ about:
   license_file: Copyright
   summary: The XML C parser and toolkit of Gnome
   description: |
-     Though libxml2 is written in C a variety of language
-     bindings make it available in other environments.
+    Though libxml2 is written in C a variety of language
+    bindings make it available in other environments.
   doc_url: http://xmlsoft.org/html/index.html
   doc_source_url: https://github.com/GNOME/libxml2/blob/master/doc/index.html
   dev_url: https://git.gnome.org/browse/libxml2/
