@@ -7,13 +7,13 @@ c_compiler_version:
 cdt_name:
 - cos6
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 docker_image:
 - quay.io/condaforge/linux-anvil-comp7
 icu:
-- '68'
+- '69'
 libiconv:
 - '1.16'
 pin_run_as_build:
