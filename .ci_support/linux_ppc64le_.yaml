@@ -3,7 +3,7 @@ VERBOSE_AT:
 c_compiler:
 - gcc
 c_compiler_version:
-- '9'
+- '10'
 cdt_name:
 - cos7
 channel_sources:
@@ -13,7 +13,7 @@ channel_targets:
 docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 icu:
-- '69'
+- '70'
 libiconv:
 - '1.16'
 pin_run_as_build:
