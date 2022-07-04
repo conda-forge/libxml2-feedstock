@@ -30,7 +30,7 @@ index 491dc88..415ec0b 100644
 +        echo Description: libXML library version2. >>$@
 +        echo Requires: >>$@
 +        echo Libs: -L$(LIBPREFIX:\=/) -lxml2 -liconv -lz >>$@
-+        echo Cflags: -I$(INCPREFIX:\=/)/libxml >>$@
++        echo Cflags: -I$(INCPREFIX:\=/)/libxml2 >>$@
  
  libxml : $(BINDIR)\$(XML_SO) 
  
