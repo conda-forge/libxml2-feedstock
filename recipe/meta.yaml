@@ -33,11 +33,6 @@ requirements:
     - libiconv
     - xz  # [not win]
     - zlib
-  run:
-    - icu  # [not win]
-    - libiconv
-    - xz  # [not win]
-    - zlib
 
 test:
   files:
