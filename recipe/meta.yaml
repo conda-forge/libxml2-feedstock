@@ -38,7 +38,7 @@ test:
   files:
     - test.xml
   commands:
-    - xmllint test.xml
+    - xmllint test.xml  # [not (aarch64 or ppc64le)]
 
 about:
   home: http://xmlsoft.org/
