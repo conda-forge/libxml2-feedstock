@@ -19,17 +19,10 @@ docker_image:
 icu:
 - '70'
 libiconv:
-- '1.17'
-pin_run_as_build:
-  libiconv:
-    max_pin: x.x
-  xz:
-    max_pin: x.x
-  zlib:
-    max_pin: x.x
+- '1'
 target_platform:
 - linux-aarch64
 xz:
-- '5.2'
+- '5'
 zlib:
 - '1.2'

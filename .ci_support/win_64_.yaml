@@ -7,12 +7,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libiconv:
-- '1.17'
-pin_run_as_build:
-  libiconv:
-    max_pin: x.x
-  zlib:
-    max_pin: x.x
+- '1'
 target_platform:
 - win-64
 zlib:
