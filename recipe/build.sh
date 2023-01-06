@@ -15,8 +15,6 @@ export CPPFLAGS="${CPPFLAGS} -DFALSE=0 -DTRUE=1"
             --with-zlib="${PREFIX}" \
             --with-icu \
             --with-lzma="${PREFIX}" \
-            --with-ftp \
-            --with-legacy \
             --without-python \
             --enable-static=no
 make -j${CPU_COUNT} ${VERBOSE_AT}
