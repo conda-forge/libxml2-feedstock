@@ -35,3 +35,8 @@ make install
 rm -rf ${PREFIX}/share/doc
 rm -rf ${PREFIX}/share/gtk-doc
 rm -rf ${PREFIX}/share/man
+
+for f in "activate" "deactivate"; do
+    mkdir -p "${PREFIX}/etc/conda/${f}.d"
+    cp "${RECIPE_DIR}/${f}.sh" "${PREFIX}/etc/conda/${f}.d/${PKG_NAME}_${f}.sh"
+done
