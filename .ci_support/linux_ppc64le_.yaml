@@ -3,7 +3,7 @@ VERBOSE_AT:
 c_compiler:
 - gcc
 c_compiler_version:
-- '10'
+- '11'
 cdt_name:
 - cos7
 channel_sources:
