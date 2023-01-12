@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if test -n "${xml_catalog_files_libxslt}"; then
+if test -n "${xml_catalog_files_libxslt:-}"; then
     export XML_CATALOG_FILES="${xml_catalog_files_libxslt}"
 else
     unset XML_CATALOG_FILES
