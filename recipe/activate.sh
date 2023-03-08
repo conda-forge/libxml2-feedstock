@@ -1,10 +1,10 @@
 #! /bin/sh
 
 if test -n "${XML_CATALOG_FILES:-}"; then
-    export xml_catalog_files_libxml2="${XML_CATALOG_FILES}"
+    xml_catalog_files_libxml2="${XML_CATALOG_FILES}"
     XML_CATALOG_FILES="${XML_CATALOG_FILES} "
 else
-    export xml_catalog_files_libxml2=""
+    xml_catalog_files_libxml2=""
     XML_CATALOG_FILES=""
 fi
 
