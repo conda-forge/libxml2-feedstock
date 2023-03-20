@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 VERBOSE_AT:
 - V=1
 c_compiler:
-- clang
+- clang_bootstrap
 c_compiler_version:
 - '14'
 channel_sources:
