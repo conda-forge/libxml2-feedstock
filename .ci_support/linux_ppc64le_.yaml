@@ -13,7 +13,7 @@ channel_targets:
 docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 icu:
-- '70'
+- '72'
 libiconv:
 - '1'
 target_platform:
