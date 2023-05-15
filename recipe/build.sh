@@ -4,9 +4,13 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 
 ./autogen.sh
 
-# Define TRUE/FALSE via preprocessor flags for now (until upstream fixes it).
-# (Some (non-header) source files use them but not define them or include <stdbool.h> .)
-export CPPFLAGS="${CPPFLAGS} -DFALSE=0 -DTRUE=1"
+if [[ `uname` == "Linux" ]]; then
+  # workaround weird configure behaviour where it decides
+  # it doesn't need libiconv
+  export LDFLAGS="-L${PREFIX}/lib -liconv"
+fi
+
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
 
 ./configure --prefix="${PREFIX}" \
             --build=${BUILD} \
@@ -18,15 +22,13 @@ export CPPFLAGS="${CPPFLAGS} -DFALSE=0 -DTRUE=1"
             --with-ftp \
             --with-legacy \
             --without-python \
-            --enable-static=no
+            --enable-static=no || cat config.log
 make -j${CPU_COUNT} ${VERBOSE_AT}
-# Sorry:
-# ## Error cases regression tests
-# file result/errors/759573.xml.err is 1983 bytes, result is 1557 bytes
-# Error for ./test/errors/759573.xml failed
-# if [[ ${target_platform} != osx-64 ]]; then
-#   make check $VERBOSE_AT}
-# fi
+
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
+  make check ${VERBOSE_AT}
+fi
+
 make install
 
 # Remove large documentation files that can take up to 6.6/9.2MB of the install
