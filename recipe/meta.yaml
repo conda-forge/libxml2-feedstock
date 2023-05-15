@@ -9,7 +9,6 @@ source:
   sha256: 4b489fc540c3085a9c4c9ef9febe24b0cfd0c57d094cab19f1b51421d59357f1
   patches:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
-    - 0004-CVE-2017-8872.patch
 
 build:
   number: 0
