@@ -7,7 +7,7 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 if [[ `uname` == "Linux" ]]; then
   # workaround weird configure behaviour where it decides
   # it doesn't need libiconv
-  export LDFLAGS="-liconv"
+  export LDFLAGS="-L${PREFIX} -liconv"
 fi
 
 ./configure --prefix="${PREFIX}" \
