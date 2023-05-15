@@ -7,7 +7,7 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 if [[ `uname` == "Linux" ]]; then
   # workaround weird configure behaviour where it decides
   # it doesn't need libiconv
-  LDFLAGS="-liconv"
+  export LDFLAGS="-liconv"
 fi
 
 ./configure --prefix="${PREFIX}" \
@@ -20,11 +20,11 @@ fi
             --with-ftp \
             --with-legacy \
             --without-python \
-            --enable-static=no
+            --enable-static=no || cat config.log
 make -j${CPU_COUNT} ${VERBOSE_AT}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
-  make check
+  make check ${VERBOSE_AT}
 fi
 
 make install
