@@ -27,13 +27,16 @@ requirements:
     - pkg-config  # [not win]
     - make  # [not win]
     - m2-patch  # [win]
-    - python 3.10  # [not win]
+    - python >=3.10,<3.11  # [not win]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - libiconv  # [not win]
   host:
     - icu  # [not win]
     - libiconv
     - xz  # [not win]
     - zlib
+    - python >=3.10,<3.11  # [not win]
+    - libiconv  # [not win]
 
 test:
   files:
