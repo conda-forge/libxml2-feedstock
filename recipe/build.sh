@@ -10,6 +10,8 @@ if [[ `uname` == "Linux" ]]; then
   export LDFLAGS="-L${PREFIX}/lib -liconv"
 fi
 
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
+
 ./configure --prefix="${PREFIX}" \
             --build=${BUILD} \
             --host=${HOST} \
