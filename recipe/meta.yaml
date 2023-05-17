@@ -32,7 +32,7 @@ requirements:
     - libiconv  # [not win]
   host:
     - icu  # [not win]
-    - libiconv  # [not win]
+    - libiconv
     - xz  # [not win]
     - zlib
 
