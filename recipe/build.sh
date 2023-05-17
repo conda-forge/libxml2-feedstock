@@ -21,7 +21,7 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
             --with-lzma="${PREFIX}" \
             --with-ftp \
             --with-legacy \
-            --without-python \
+            --with-python=no \
             --enable-static=no || cat config.log
 make -j${CPU_COUNT} ${VERBOSE_AT}
 
