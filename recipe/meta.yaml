@@ -27,6 +27,7 @@ requirements:
     - pkg-config  # [not win]
     - make  # [not win]
     - m2-patch  # [win]
+    - libiconv  # [not win]
   host:
     - icu  # [not win]
     - libiconv
