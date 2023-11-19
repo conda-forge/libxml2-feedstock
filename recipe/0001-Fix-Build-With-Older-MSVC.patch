@@ -1,0 +1,77 @@
+From f92ea2ccecdb94cabd40c4df1a2e7f35dd7bd4cb Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Sat, 18 Nov 2023 14:36:41 +0100
+Subject: [PATCH] tests: Fix build with older MSVC
+
+Regressed in 9b5cce7a.
+
+Fixes #620.
+---
+ runsuite.c    | 1 +
+ runtest.c     | 2 +-
+ runxmlconf.c  | 1 +
+ testapi.c     | 1 +
+ testrecurse.c | 1 +
+ 5 files changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/runsuite.c b/runsuite.c
+index c1d35ad06..a36a5f3d3 100644
+--- a/runsuite.c
++++ b/runsuite.c
+@@ -6,6 +6,7 @@
+  * daniel@veillard.com
+  */
+ 
++#include "config.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+diff --git a/runtest.c b/runtest.c
+index fe896b722..ff65fe86f 100644
+--- a/runtest.c
++++ b/runtest.c
+@@ -11,7 +11,7 @@
+  * daniel@veillard.com
+  */
+ 
+-#include "config.h"
++#include "libxml.h"
+ #include <stdio.h>
+ #ifdef HAVE_UNISTD_H
+ #include <unistd.h>
+diff --git a/runxmlconf.c b/runxmlconf.c
+index 3053f6a3a..b5c3fd8dd 100644
+--- a/runxmlconf.c
++++ b/runxmlconf.c
+@@ -6,6 +6,7 @@
+  * daniel@veillard.com
+  */
+ 
++#include "config.h"
+ #include <stdio.h>
+ #include <libxml/xmlversion.h>
+ 
+diff --git a/testapi.c b/testapi.c
+index 2f17c935e..0a0aadffe 100644
+--- a/testapi.c
++++ b/testapi.c
+@@ -11,6 +11,7 @@
+ /* Disable deprecation warnings */
+ #define XML_DEPRECATED
+ 
++#include "config.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+diff --git a/testrecurse.c b/testrecurse.c
+index c5832905a..d76d80acc 100644
+--- a/testrecurse.c
++++ b/testrecurse.c
+@@ -10,6 +10,7 @@
+  * daniel@veillard.com
+  */
+ 
++#include "config.h"
+ #include <stdio.h>
+ 
+ #include <stdlib.h>
