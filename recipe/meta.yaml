@@ -8,7 +8,6 @@ source:
   url: https://gitlab.gnome.org/GNOME/libxml2/-/archive/v{{ version }}/libxml2-v{{ version }}.tar.gz
   sha256: 1090e62c5a1900429f63e4681263b96e7829876ccbc66cf2d9266cd589f67286
   patches:
-    - 0001-Fix-Build-With-Older-MSVC.patch
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 
 build:
