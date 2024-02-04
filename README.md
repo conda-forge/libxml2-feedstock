@@ -206,6 +206,7 @@ Feedstock Maintainers
 =====================
 
 * [@gillins](https://github.com/gillins/)
+* [@isuruf](https://github.com/isuruf/)
 * [@jakirkham](https://github.com/jakirkham/)
 * [@jschueller](https://github.com/jschueller/)
 * [@msarahan](https://github.com/msarahan/)
