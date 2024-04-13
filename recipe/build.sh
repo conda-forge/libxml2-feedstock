@@ -22,6 +22,7 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
             --with-ftp \
             --with-legacy \
             --with-python=no \
+            --with-tls \
             --enable-static=no || cat config.log
 make -j${CPU_COUNT} ${VERBOSE_AT}
 
