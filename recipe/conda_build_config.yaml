@@ -2,10 +2,3 @@ c_compiler:        # [osx]
 - clang_bootstrap  # [osx]
 cxx_compiler:      # [osx]
 - clang_bootstrap  # [osx]
-
-# 2024/03
-# Avoiding a full migration for now
-# https://github.com/conda-forge/conda-forge-pinning-feedstock/pull/5443
-zlib:
-  - '1.2'
-  - '1.3'
