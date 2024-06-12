@@ -33,8 +33,11 @@ requirements:
     - libiconv  # [not win]
   host:
     - libiconv
+    - icu  # [with_icu]
     - xz  # [not win]
     - zlib
+  run_constrained:
+    - icu <0.0a0  # [not with_icu]
 
 test:
   requires:
