@@ -17,7 +17,6 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
             --host=${HOST} \
             --with-iconv="${PREFIX}" \
             --with-zlib="${PREFIX}" \
-            --with-icu \
             --with-lzma="${PREFIX}" \
             --with-ftp \
             --with-legacy \

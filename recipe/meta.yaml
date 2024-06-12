@@ -11,7 +11,7 @@ source:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 
 build:
-  number: 4
+  number: 0
   run_exports:
     # remove symbols at minor versions according to
     #    https://abi-laboratory.pro/tracker/timeline/libxml2/
@@ -32,7 +32,6 @@ requirements:
     - m2-patch  # [win]
     - libiconv  # [not win]
   host:
-    - icu  # [not win]
     - libiconv
     - xz  # [not win]
     - zlib
