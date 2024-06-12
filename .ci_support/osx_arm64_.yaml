@@ -16,8 +16,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-icu:
-- '73'
 libiconv:
 - '1'
 macos_machine:
@@ -27,4 +25,4 @@ target_platform:
 xz:
 - '5'
 zlib:
-- '1.2'
+- '1'
