@@ -12,5 +12,7 @@ libiconv:
 - '1'
 target_platform:
 - win-64
+with_icu:
+- 'false'
 zlib:
 - '1'

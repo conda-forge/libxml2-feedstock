@@ -4,13 +4,15 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 
 ./autogen.sh
 
-if [[ `uname` == "Linux" ]]; then
+if [[ ${target_platform} == linux-* ]]; then
   # workaround weird configure behaviour where it decides
   # it doesn't need libiconv
   export LDFLAGS="-L${PREFIX}/lib -liconv"
 fi
 
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
+if [[ "${with_icu}" == "true" ]]; then
+  CONFIGURE_ARGS="--with-icu"
+fi
 
 ./configure --prefix="${PREFIX}" \
             --build=${BUILD} \
@@ -22,7 +24,9 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
             --with-legacy \
             --with-python=no \
             --with-tls \
-            --enable-static=no || cat config.log
+            --enable-static=no \
+           $CONFIGURE_ARGS || cat config.log
+
 make -j${CPU_COUNT} ${VERBOSE_AT}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
@@ -30,6 +34,10 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}
 fi
 
 make install
+
+if [[ ${target_platform} == linux-* ]]; then
+  ${NM} -g ${PREFIX}/lib/libxml2.so | cut -b 18-
+fi
 
 # Remove large documentation files that can take up to 6.6/9.2MB of the install
 # size.
