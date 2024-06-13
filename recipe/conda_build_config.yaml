@@ -4,5 +4,5 @@ cxx_compiler:      # [osx]
 - clang_bootstrap  # [osx]
 
 with_icu:
-- true    # [not win]
-- false
+- yes     # [not win]
+- no
