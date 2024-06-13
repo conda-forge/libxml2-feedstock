@@ -10,22 +10,19 @@ if [[ ${target_platform} == linux-* ]]; then
   export LDFLAGS="-L${PREFIX}/lib -liconv"
 fi
 
-if [[ "${with_icu}" == "true" ]]; then
-  CONFIGURE_ARGS="--with-icu"
-fi
-
 ./configure --prefix="${PREFIX}" \
             --build=${BUILD} \
             --host=${HOST} \
             --with-iconv="${PREFIX}" \
             --with-zlib="${PREFIX}" \
+            --with-icu="${with_icu}" \
             --with-lzma="${PREFIX}" \
             --with-ftp \
             --with-legacy \
             --with-python=no \
             --with-tls \
             --enable-static=no \
-           $CONFIGURE_ARGS || cat config.log
+            || cat config.log
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
 
