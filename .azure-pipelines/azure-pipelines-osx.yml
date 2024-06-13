@@ -8,17 +8,17 @@ jobs:
     vmImage: macOS-12
   strategy:
     matrix:
-      osx_64_with_icufalse:
-        CONFIG: osx_64_with_icufalse
+      osx_64_with_icuno:
+        CONFIG: osx_64_with_icuno
         UPLOAD_PACKAGES: 'True'
-      osx_64_with_icutrue:
-        CONFIG: osx_64_with_icutrue
+      osx_64_with_icuyes:
+        CONFIG: osx_64_with_icuyes
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_with_icufalse:
-        CONFIG: osx_arm64_with_icufalse
+      osx_arm64_with_icuno:
+        CONFIG: osx_arm64_with_icuno
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_with_icutrue:
-        CONFIG: osx_arm64_with_icutrue
+      osx_arm64_with_icuyes:
+        CONFIG: osx_arm64_with_icuyes
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables: {}
