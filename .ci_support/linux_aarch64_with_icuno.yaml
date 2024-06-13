@@ -27,7 +27,7 @@ libiconv:
 target_platform:
 - linux-aarch64
 with_icu:
-- 'true'
+- 'no'
 xz:
 - '5'
 zip_keys:

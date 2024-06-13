@@ -13,6 +13,6 @@ libiconv:
 target_platform:
 - win-64
 with_icu:
-- 'false'
+- 'no'
 zlib:
 - '1'
