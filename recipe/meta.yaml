@@ -31,12 +31,12 @@ requirements:
     - make  # [not win]
     - m2-patch  # [win]
     - libiconv  # [not win]
+    - python =3.10
   host:
     - libiconv
     - icu  # [with_icu == "yes"]
     - xz  # [not win]
     - zlib
-    - python =3.10
   run_constrained:
     - icu <0.0a0  # [with_icu != "yes"]
 
