@@ -31,7 +31,6 @@ requirements:
     - make  # [not win]
     - m2-patch  # [win]
     - libiconv  # [not win]
-    - python =3.10
   host:
     - libiconv
     - icu  # [with_icu == "yes"]

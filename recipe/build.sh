@@ -7,10 +7,9 @@ NOCONFIGURE=1 ./autogen.sh
 if [[ ${target_platform} == linux-* ]]; then
   # workaround weird configure behaviour where it decides
   # it doesn't need libiconv
-  export LDFLAGS="-L${PREFIX}/lib -liconv"
+  export LDFLAGS="${LDFLAGS} -liconv"
 fi
 
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
 ./configure --prefix="${PREFIX}" \
             --build=${BUILD} \
             --host=${HOST} \
