@@ -2,28 +2,28 @@
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 
-./autogen.sh
+NOCONFIGURE=1 ./autogen.sh
 
-if [[ `uname` == "Linux" ]]; then
+if [[ ${target_platform} == linux-* ]]; then
   # workaround weird configure behaviour where it decides
   # it doesn't need libiconv
-  export LDFLAGS="-L${PREFIX}/lib -liconv"
+  export LDFLAGS="${LDFLAGS} -liconv"
 fi
-
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
 
 ./configure --prefix="${PREFIX}" \
             --build=${BUILD} \
             --host=${HOST} \
             --with-iconv="${PREFIX}" \
             --with-zlib="${PREFIX}" \
-            --with-icu \
+            --with-icu="${with_icu}" \
             --with-lzma="${PREFIX}" \
             --with-ftp \
             --with-legacy \
             --with-python=no \
             --with-tls \
-            --enable-static=no || cat config.log
+            --enable-static=no \
+            || cat config.log
+
 make -j${CPU_COUNT} ${VERBOSE_AT}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
@@ -31,6 +31,10 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}
 fi
 
 make install
+
+if [[ ${target_platform} == linux-* ]]; then
+  ${NM} -g ${PREFIX}/lib/libxml2.so | cut -b 18-
+fi
 
 # Remove large documentation files that can take up to 6.6/9.2MB of the install
 # size.
