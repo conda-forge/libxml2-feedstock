@@ -27,4 +27,4 @@ target_platform:
 xz:
 - '5'
 zlib:
-- '1.2'
+- '1'
