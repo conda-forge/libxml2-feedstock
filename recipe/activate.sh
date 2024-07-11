@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 if test -n "${XML_CATALOG_FILES:-}"; then
     xml_catalog_files_libxml2="${XML_CATALOG_FILES}"
