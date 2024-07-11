@@ -25,8 +25,3 @@ bld.bat text eol=crlf
 azure-pipelines.yml linguist-generated=true
 build-locally.py linguist-generated=true
 shippable.yml linguist-generated=true
-
-# explicitly set LF line endings for these files even on windows
-# because we need to support (de)activation from bash
-/recipe/activate.sh text eol=lf
-/recipe/deactivate.sh text eol=lf
