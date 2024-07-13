@@ -11,7 +11,7 @@ source:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 
 build:
-  number: 3
+  number: 4
   run_exports:
     # remove symbols at minor versions according to
     #    https://abi-laboratory.pro/tracker/timeline/libxml2/
