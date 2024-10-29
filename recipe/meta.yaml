@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://gitlab.gnome.org/GNOME/libxml2/-/archive/v{{ version }}/libxml2-v{{ version }}.tar.gz
+  url: https://github.com/GNOME/libxml2/archive/v{{ version }}.tar.gz
   sha256: 832F8C4C652F813C9D0A01ADCAF86145B77C64E56C71ED85DB8071AA78BEB98F
   patches:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
@@ -61,7 +61,7 @@ about:
     Though libxml2 is written in C a variety of language
     bindings make it available in other environments.
   doc_url: http://xmlsoft.org/html/index.html
-  doc_source_url: https://github.com/GNOME/libxml2/blob/master/doc/index.html
+  doc_source_url: https://github.com/GNOME/libxml2/blob/master/doc/devhelp/index.html
   dev_url: https://git.gnome.org/browse/libxml2/
 
 extra:
