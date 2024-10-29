@@ -1,7 +1,7 @@
 
 cd win32
 
-cscript configure.js compiler=msvc iconv=yes icu=no zlib=yes lzma=no python=no ^
+cscript configure.js compiler=msvc iconv=yes icu=%with_icu% zlib=yes lzma=no python=no ^
                      threads=ctls ^
                      prefix=%LIBRARY_PREFIX% ^
                      include=%LIBRARY_INC% ^

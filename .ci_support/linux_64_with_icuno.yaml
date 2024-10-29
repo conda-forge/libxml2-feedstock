@@ -15,13 +15,15 @@ channel_sources:
 channel_targets:
 - conda-forge main
 docker_image:
-- quay.io/condaforge/linux-anvil-ppc64le
+- quay.io/condaforge/linux-anvil-cos7-x86_64
 icu:
 - '75'
 libiconv:
 - '1'
 target_platform:
-- linux-ppc64le
+- linux-64
+with_icu:
+- 'no'
 xz:
 - '5'
 zip_keys:
