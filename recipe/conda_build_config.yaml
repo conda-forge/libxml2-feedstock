@@ -3,6 +3,9 @@ c_compiler:        # [osx]
 cxx_compiler:      # [osx]
 - clang_bootstrap  # [osx]
 
+# currently windows build does not work with icu.
+# if support is added, add a conflict with icu for the non-icu
+# build by updating run_constrained
 with_icu:
 - yes     # [not win]
 - no
