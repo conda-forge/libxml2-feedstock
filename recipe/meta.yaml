@@ -11,7 +11,7 @@ source:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # remove symbols at minor versions according to
     #    https://abi-laboratory.pro/tracker/timeline/libxml2/
@@ -34,7 +34,7 @@ requirements:
   host:
     - libiconv
     - icu  # [with_icu == "yes"]
-    - xz  # [not win]
+    - liblzma-devel  # [not win]
     - zlib
   run_constrained:
     - icu <0.0a0  # [with_icu != "yes" and not win]
