@@ -12,6 +12,8 @@ icu:
 - '75'
 libiconv:
 - '1'
+liblzma_devel:
+- '5'
 libxml2:
 - '2'
 target_platform:
