@@ -105,10 +105,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64</td>
+              <td>win_64_with_icuno</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=583&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libxml2-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libxml2-feedstock?branchName=main&jobName=win&configuration=win%20win_64_with_icuno" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_with_icuyes</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=583&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libxml2-feedstock?branchName=main&jobName=win&configuration=win%20win_64_with_icuyes" alt="variant">
                 </a>
               </td>
             </tr>

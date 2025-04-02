@@ -8,6 +8,8 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+icu:
+- '75'
 libiconv:
 - '1'
 libxml2:
@@ -15,6 +17,6 @@ libxml2:
 target_platform:
 - win-64
 with_icu:
-- 'no'
+- 'yes'
 zlib:
 - '1'
