@@ -30,11 +30,10 @@ requirements:
     - pkg-config  # [not win]
     - make  # [not win]
     - cmake  # [win]
-    - libiconv  # [not win]
   host:
     - libiconv
     - icu  # [with_icu == "yes"]
-    - liblzma-devel  # [not win]
+    - liblzma-devel
     - zlib
   run_constrained:
     - icu <0.0a0  # [with_icu != "yes"]
