@@ -37,7 +37,7 @@ requirements:
     - liblzma-devel  # [not win]
     - zlib
   run_constrained:
-    - icu <0.0a0  # [with_icu != "yes" and not win]
+    - icu <0.0a0  # [with_icu != "yes"]
 
 test:
   requires:

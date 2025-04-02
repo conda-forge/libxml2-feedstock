@@ -12,6 +12,9 @@ if errorlevel 1 exit 1
 nmake
 if errorlevel 1 exit 1
 
+nmake install
+if errorlevel 1 exit 1
+
 setlocal EnableDelayedExpansion
 for %%F in (activate deactivate) DO (
     if not exist %PREFIX%\etc\conda\%%F.d mkdir %PREFIX%\etc\conda\%%F.d
