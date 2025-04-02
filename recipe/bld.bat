@@ -1,30 +1,16 @@
 
-cd win32
+mkdir build
+cd build
 
-cscript configure.js compiler=msvc iconv=yes icu=%with_icu% zlib=yes lzma=no python=no ^
-                     threads=ctls ^
-                     prefix=%LIBRARY_PREFIX% ^
-                     include=%LIBRARY_INC% ^
-                     lib=%LIBRARY_LIB%
-
+cmake -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+-D CMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
+-D CMAKE_BUILD_TYPE=Release ^
+-D LIBXML2_WITH_ICU=%with_icu%
+-G "NMake Makefiles" ..
 if errorlevel 1 exit 1
 
-nmake /f Makefile.msvc
+nmake
 if errorlevel 1 exit 1
-
-nmake /f Makefile.msvc install
-if errorlevel 1 exit 1
-
-:: These programs are listed as "check_PROGRAMS"
-:: Under the unix makefile
-:: https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/Makefile.am
-:: But are always installed for windows ....
-:: https://gitlab.gnome.org/GNOME/libxml2/-/blob/master/win32/Makefile.msvc#L257
-del %LIBRARY_PREFIX%\bin\test*.exe || exit 1
-del %LIBRARY_PREFIX%\bin\runsuite.exe || exit 1
-del %LIBRARY_PREFIX%\bin\runtest.exe || exit 1
-del %LIBRARY_PREFIX%\bin\runxmlconf.exe || exit 1
-copy %LIBRARY_LIB%\libxml2.lib %LIBRARY_LIB%\xml2.lib || exit 1
 
 setlocal EnableDelayedExpansion
 for %%F in (activate deactivate) DO (

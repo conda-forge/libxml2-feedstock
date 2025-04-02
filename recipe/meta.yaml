@@ -29,7 +29,7 @@ requirements:
     - libtool  # [not win]
     - pkg-config  # [not win]
     - make  # [not win]
-    - m2-patch  # [win]
+    - cmake  # [win]
     - libiconv  # [not win]
   host:
     - libiconv
