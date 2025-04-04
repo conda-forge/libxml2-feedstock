@@ -11,13 +11,13 @@ source:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # remove symbols at minor versions according to
     #    https://abi-laboratory.pro/tracker/timeline/libxml2/
     # but the analysis is incorrect. abi-laboratory has a hard
     # time with shared libraries with versioned objects.
-    - {{ pin_subpackage('libxml2', max_pin='x') }}
+    - libxml2 >={{ versiion}},<2.14.0a0
 
 requirements:
   build:
