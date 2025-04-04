@@ -17,7 +17,7 @@ build:
     #    https://abi-laboratory.pro/tracker/timeline/libxml2/
     # but the analysis is incorrect. abi-laboratory has a hard
     # time with shared libraries with versioned objects.
-    - libxml2 >={{ versiion}},<2.14.0a0
+    - libxml2 >={{ version }},<2.14.0a0
 
 requirements:
   build:
