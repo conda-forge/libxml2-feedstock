@@ -1,4 +1,4 @@
-{% set version = "2.13.7" %}
+{% set version = "2.14.0" %}
 
 package:
   name: libxml2
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://gitlab.gnome.org/GNOME/libxml2/-/archive/v{{ version }}/libxml2-v{{ version }}.tar.gz
-  sha256: 096f83eb1331616d4f85fec8861427eafd5d34baf274cbbb7150da376f060c0a
+  sha256: d5e7ca47ed5900fc7f859658d86e71d101b90608a396a70edc1dcc75893ba950
   patches:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 
@@ -29,15 +29,14 @@ requirements:
     - libtool  # [not win]
     - pkg-config  # [not win]
     - make  # [not win]
-    - m2-patch  # [win]
-    - libiconv  # [not win]
+    - cmake  # [win]
   host:
     - libiconv
     - icu  # [with_icu == "yes"]
-    - liblzma-devel  # [not win]
+    - liblzma-devel
     - zlib
   run_constrained:
-    - icu <0.0a0  # [with_icu != "yes" and not win]
+    - icu <0.0a0  # [with_icu != "yes"]
 
 test:
   requires:
