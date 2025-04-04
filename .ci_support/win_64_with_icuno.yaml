@@ -15,7 +15,7 @@ libiconv:
 liblzma_devel:
 - '5'
 libxml2:
-- '2'
+- '2.13'
 target_platform:
 - win-64
 with_icu:
