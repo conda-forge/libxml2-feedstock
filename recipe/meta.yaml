@@ -1,4 +1,4 @@
-{% set version = "2.14.0" %}
+{% set version = "2.14.2" %}
 
 package:
   name: libxml2
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://gitlab.gnome.org/GNOME/libxml2/-/archive/v{{ version }}/libxml2-v{{ version }}.tar.gz
-  sha256: d5e7ca47ed5900fc7f859658d86e71d101b90608a396a70edc1dcc75893ba950
+  sha256: ed6632f1fca11e5243c9bf07100564b93c3890fecef626fc9d74562a473a85d6
   patches:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('libxml2', max_pin='x.x') }}
 
