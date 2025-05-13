@@ -25,6 +25,7 @@ requirements:
     - libtool  # [not win]
     - pkg-config  # [not win]
     - make  # [not win]
+    - m4  # [not win]
     - cmake  # [win]
   host:
     - libiconv
