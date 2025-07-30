@@ -16,7 +16,6 @@ Documentation: http://xmlsoft.org/html/index.html
 Though libxml2 is written in C a variety of language
 bindings make it available in other environments.
 
-
 Current build status
 ====================
 
