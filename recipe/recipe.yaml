@@ -1,0 +1,118 @@
+schema_version: 1
+
+context:
+  version: 2.14.5
+
+package:
+  name: libxml2
+  version: ${{ version }}
+
+source:
+  url: https://gitlab.gnome.org/GNOME/libxml2/-/archive/v${{ version }}/libxml2-v${{ version }}.tar.gz
+  sha256: 54968c8ab8723c2d75a38fc45810e8cf60d44991e0887661bf9905a4042ad108
+  patches:
+    - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - if: unix
+      then: libtool
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - if: not win
+      then: autoconf
+    - if: not win
+      then: automake
+    - if: not win
+      then: libtool
+    - if: not win
+      then: pkg-config
+    - if: not win
+      then: make
+    - if: win
+      then: cmake
+  host:
+    - libiconv
+    - if: with_icu == "yes"
+      then: icu
+    - liblzma-devel
+    - zlib
+  run_exports:
+    - ${{ pin_subpackage('libxml2', upper_bound='x.x') }}
+  run_constraints:
+    - if: with_icu != "yes"
+      then: icu <0.0a0
+
+tests:
+  - files:
+      recipe:
+        - test.xml
+        - test_catalog.xml
+    requirements:
+      run:
+        - ripgrep
+    script:
+      - echo on
+      - xmllint test.xml
+      - if: win
+        then: rg \r %CONDA_PREFIX%\etc\conda\${{ task }}.d\libxml2_${{ task }}.sh & if %ERRORLEVEL% NEQ 1 (exit 0) else (exit 1)
+      - if: not win
+        then: mkdir -p "${PREFIX}/etc/xml"
+      - if: win
+        then: mkdir     "%PREFIX%\etc\xml"
+      - if: not win
+        then: cp   test_catalog.xml "${PREFIX}/etc/xml/catalog"
+      - if: win
+        then: copy test_catalog.xml  "%PREFIX%\etc\xml\catalog"
+      - if: not win
+        then: xmlcatalog "" "http://www.w3.org/2001/xml.xsd" | grep -x -F -e "file://test-uri-override"
+      - if: win
+        then: xmlcatalog "" "http://www.w3.org/2001/xml.xsd" | findstr /X "/C:file://test-uri-override"
+      - if: not win
+        then: rm  "${PREFIX}/etc/xml/catalog"
+      - if: win
+        then: del  "%PREFIX%\etc\xml\catalog"
+      - if: not win
+        then: xmlcatalog "" "test-id" | grep -x -F -e "No entry for URI test-id"
+      - if: win
+        then: xmlcatalog "" "test-id" | findstr /X "/C:No entry for URI test-id"
+      - if: not win
+        then: xmlcatalog "test_catalog.xml" "test-id" | grep -x -F -e "file://test-uri"
+      - if: win
+        then: xmlcatalog "test_catalog.xml" "test-id" | findstr /X "/C:file://test-uri"
+      - if: not win
+        then: export XML_CATALOG_FILES="file://$(pwd)/test_catalog.xml"
+      - if: win
+        then: set  "XML_CATALOG_FILES=file://%CD:\=/%/test_catalog.xml"
+      - if: not win
+        then: xmlcatalog "" "test-id" | grep -x -F -e "file://test-uri"
+      - if: win
+        then: xmlcatalog "" "test-id" | findstr /X "/C:file://test-uri"
+      - if: not win
+        then: xmlcatalog "" "http://www.w3.org/2009/01/xml.xsd" | grep -x -F -e "No entry for URI http://www.w3.org/2009/01/xml.xsd"
+      - if: win
+        then: xmlcatalog "" "http://www.w3.org/2009/01/xml.xsd" | findstr /X "/C:No entry for URI http://www.w3.org/2009/01/xml.xsd"
+
+about:
+  license: MIT
+  license_file: Copyright
+  summary: The XML C parser and toolkit of Gnome
+  description: |
+    Though libxml2 is written in C a variety of language
+    bindings make it available in other environments.
+  homepage: http://xmlsoft.org/
+  repository: https://git.gnome.org/browse/libxml2/
+  documentation: http://xmlsoft.org/html/index.html
+
+extra:
+  recipe-maintainers:
+    - isuruf
+    - ocefpaf
+    - jakirkham
+    - gillins
+    - jschueller
+    - msarahan
+    - scopatz
