@@ -9,9 +9,11 @@ source:
   sha256: df8d4148cc3473d18e07b72f501aac0dcb7c055c8f537da21c0a985be948fc16
   patches:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
+    - libxml2-2.12.5-CVE-2025-49794.patch
+    - libxml2-2.12.5-CVE-2025-49795.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # remove symbols at minor versions according to
     #    https://abi-laboratory.pro/tracker/timeline/libxml2/

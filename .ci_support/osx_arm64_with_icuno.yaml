@@ -7,7 +7,7 @@ VERBOSE_AT:
 c_compiler:
 - clang_bootstrap
 c_compiler_version:
-- '18'
+- '19'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -22,8 +22,6 @@ libiconv:
 - '1'
 liblzma_devel:
 - '5'
-libxml2:
-- '2'
 macos_machine:
 - arm64-apple-darwin20.0.0
 target_platform:

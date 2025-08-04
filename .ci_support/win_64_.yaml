@@ -1,7 +1,7 @@
 VERBOSE_AT:
 - V=1
 c_compiler:
-- vs2019
+- vs2022
 c_stdlib:
 - vs
 channel_sources:
@@ -10,8 +10,6 @@ channel_targets:
 - conda-forge main
 libiconv:
 - '1'
-libxml2:
-- '2'
 target_platform:
 - win-64
 with_icu:
