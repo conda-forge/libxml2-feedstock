@@ -132,6 +132,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libxml2-green.svg)](https://anaconda.org/conda-forge/libxml2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libxml2.svg)](https://anaconda.org/conda-forge/libxml2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libxml2.svg)](https://anaconda.org/conda-forge/libxml2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libxml2.svg)](https://anaconda.org/conda-forge/libxml2) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libxml2--16-green.svg)](https://anaconda.org/conda-forge/libxml2-16) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libxml2-16.svg)](https://anaconda.org/conda-forge/libxml2-16) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libxml2-16.svg)](https://anaconda.org/conda-forge/libxml2-16) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libxml2-16.svg)](https://anaconda.org/conda-forge/libxml2-16) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libxml2--devel-green.svg)](https://anaconda.org/conda-forge/libxml2-devel) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libxml2-devel.svg)](https://anaconda.org/conda-forge/libxml2-devel) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libxml2-devel.svg)](https://anaconda.org/conda-forge/libxml2-devel) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libxml2-devel.svg)](https://anaconda.org/conda-forge/libxml2-devel) |
 
 Installing libxml2
 ==================
@@ -143,16 +145,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libxml2` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libxml2, libxml2-16, libxml2-devel` can be installed with `conda`:
 
 ```
-conda install libxml2
+conda install libxml2 libxml2-16 libxml2-devel
 ```
 
 or with `mamba`:
 
 ```
-mamba install libxml2
+mamba install libxml2 libxml2-16 libxml2-devel
 ```
 
 It is possible to list all of the versions of `libxml2` available on your platform with `conda`:
