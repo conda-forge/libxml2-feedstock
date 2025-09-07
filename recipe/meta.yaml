@@ -79,6 +79,7 @@ outputs:
         - icu  # [with_icu == "yes"]
         - liblzma-devel
         - zlib
+        - {{ pin_subpackage('libxml2-' ~ sover, exact=True) }}
       run:
         - {{ pin_subpackage('libxml2-' ~ sover, exact=True) }}
       run_constrained:
@@ -131,7 +132,7 @@ outputs:
     files:
       - lib/libxml2.so                                     # [linux]
       - lib/libxml2.dylib                                  # [osx]
-      - lib/libxml2.lib                                    # [win]
+      - Library/lib/libxml2.lib                            # [win]
       - {{ library_prefix }}lib/pkgconfig/libxml-2.0.pc    # [unix]
       - {{ library_prefix }}lib/cmake/libxml2*
       - {{ library_prefix }}include/libxml2
@@ -149,6 +150,8 @@ outputs:
         - icu  # [with_icu == "yes"]
         - liblzma-devel
         - zlib
+        - {{ pin_subpackage('libxml2', exact=True) }}
+        - {{ pin_subpackage('libxml2-' ~ sover, exact=True) }}
       run:
         - {{ pin_subpackage('libxml2', exact=True) }}
         - {{ pin_subpackage('libxml2-' ~ sover, exact=True) }}
