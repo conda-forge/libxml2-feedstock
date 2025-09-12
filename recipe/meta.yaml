@@ -18,7 +18,7 @@ source:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -133,6 +133,7 @@ outputs:
       - lib/libxml2.so                                     # [linux]
       - lib/libxml2.dylib                                  # [osx]
       - Library/lib/libxml2.lib                            # [win]
+      - Library/lib/xml2.lib                               # [win]
       - {{ library_prefix }}lib/pkgconfig/libxml-2.0.pc
       - {{ library_prefix }}lib/cmake/libxml2*
       - {{ library_prefix }}include/libxml2
