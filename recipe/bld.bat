@@ -17,6 +17,8 @@ if errorlevel 1 exit 1
 nmake install
 if errorlevel 1 exit 1
 
+copy %LIBRARY_LIB%\\libxml2.lib %LIBRARY_LIB%\\xml2.lib
+
 setlocal EnableDelayedExpansion
 for %%F in (activate deactivate) DO (
     if not exist %PREFIX%\etc\conda\%%F.d mkdir %PREFIX%\etc\conda\%%F.d
