@@ -14,8 +14,6 @@ package:
 source:
   url: https://gitlab.gnome.org/GNOME/libxml2/-/archive/v{{ version }}/libxml2-v{{ version }}.tar.gz
   sha256: 027e302d24e0d136393a24e02938046cda72281a3e3620d56cbc0995524658bc
-  patches:
-    - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 
 build:
   number: 0
