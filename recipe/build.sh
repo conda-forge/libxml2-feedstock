@@ -22,6 +22,7 @@ fi
             --with-python=no \
             --with-tls \
             --enable-static=no \
+            --with-schematron=yes \
             || cat config.log
 
 make -j${CPU_COUNT} ${VERBOSE_AT}

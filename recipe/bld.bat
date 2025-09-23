@@ -8,6 +8,7 @@ cmake -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
 -D LIBXML2_WITH_ICU=%with_icu% ^
 -D LIBXML2_WITH_LZMA=yes ^
 -D LIBXML2_WITH_PYTHON=no ^
+-D LIBXML2_WITH_SCHEMATRON=yes ^
 -G "NMake Makefiles" ..
 if errorlevel 1 exit 1
 
