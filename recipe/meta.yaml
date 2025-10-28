@@ -9,8 +9,6 @@ source:
   sha256: 8d5fa142a3ea8727db1f7988b01f75b9fad8d311b8e0505e38e9d6a42a720085
   patches:
     - 0002-Make-and-install-a-pkg-config-file-on-Windows.patch
-    - libxml2-2.12.5-CVE-2025-49794.patch
-    - libxml2-2.12.5-CVE-2025-49795.patch
 
 build:
   number: 0
