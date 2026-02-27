@@ -1,0 +1,22 @@
+c_compiler:
+- vs2022
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+icu:
+- '78'
+libiconv:
+- '1'
+liblzma_devel:
+- '5'
+libxml2:
+- '2.13'
+target_platform:
+- win-arm64
+with_icu:
+- 'yes'
+zlib:
+- '1'
