@@ -14,6 +14,12 @@ jobs:
       win_64_with_icuyes:
         CONFIG: win_64_with_icuyes
         UPLOAD_PACKAGES: 'True'
+      win_arm64_with_icuno:
+        CONFIG: win_arm64_with_icuno
+        UPLOAD_PACKAGES: 'True'
+      win_arm64_with_icuyes:
+        CONFIG: win_arm64_with_icuyes
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\
