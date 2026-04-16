@@ -21,7 +21,7 @@ libiconv:
 liblzma_devel:
 - '5'
 libxml2:
-- '2.13'
+- '2.14'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:

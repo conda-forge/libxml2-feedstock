@@ -19,7 +19,7 @@ libiconv:
 liblzma_devel:
 - '5'
 libxml2:
-- '2.13'
+- '2.14'
 target_platform:
 - linux-64
 with_icu:
