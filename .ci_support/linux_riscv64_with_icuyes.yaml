@@ -19,7 +19,7 @@ libiconv:
 liblzma_devel:
 - '5'
 libxml2:
-- '2.14'
+- '2.15'
 target_platform:
 - linux-riscv64
 with_icu:
