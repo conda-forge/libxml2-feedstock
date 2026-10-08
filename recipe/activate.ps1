@@ -6,5 +6,4 @@ if ($Env:XML_CATALOG_FILES) {
     $Env:XML_CATALOG_FILES = ""
 }
 
-$conda_catalog_files += "file:///" + $Env:CONDA_PREFIX.replace(" ", "%20").replace("\", "/") + "/etc/xml/catalog"
-$Env:XML_CATALOG_FILES += "$conda_catalog_files"
+$Env:XML_CATALOG_FILES += "file:///" + $Env:CONDA_PREFIX.replace(" ", "%20").replace("\", "/") + "/etc/xml/catalog"
