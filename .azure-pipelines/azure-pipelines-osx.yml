@@ -31,7 +31,7 @@ jobs:
       osx_arm64_with_icuno:
         CONFIG: osx_arm64_with_icuno
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15-arm64
+        VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -41,7 +41,7 @@ jobs:
       osx_arm64_with_icuyes:
         CONFIG: osx_arm64_with_icuyes
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15-arm64
+        VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
