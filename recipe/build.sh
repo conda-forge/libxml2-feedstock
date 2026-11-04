@@ -25,7 +25,7 @@ fi
             --with-schematron=yes \
             || cat config.log
 
-make -j${CPU_COUNT} ${VERBOSE_AT}
+make -j${CPU_COUNT} ${VERBOSE_AT} --debug=print
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
   make check ${VERBOSE_AT}
