@@ -55,20 +55,6 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libxml2-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_with_icuyes" alt="variant">
                 </a>
               </td>
-            </tr><tr>
-              <td>osx_arm64_with_icuno</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=583&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libxml2-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_with_icuno" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_with_icuyes</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=583&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libxml2-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_with_icuyes" alt="variant">
-                </a>
-              </td>
             </tr>
           </tbody>
         </table>
