@@ -8,6 +8,8 @@ if [[ ${target_platform} == linux-* ]]; then
   # workaround weird configure behaviour where it decides
   # it doesn't need libiconv
   export LDFLAGS="${LDFLAGS} -liconv"
+else
+  export CFLAGS="${CFLAGS} -H"
 fi
 
 ./configure --prefix="${PREFIX}" \
@@ -25,7 +27,7 @@ fi
             --with-schematron=yes \
             || cat config.log
 
-make -j${CPU_COUNT} ${VERBOSE_AT}
+make -j${CPU_COUNT} ${VERBOSE_AT} --debug=print
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
   make check ${VERBOSE_AT}
