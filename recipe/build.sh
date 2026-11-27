@@ -10,6 +10,10 @@ if [[ ${target_platform} == linux-* ]]; then
   export LDFLAGS="${LDFLAGS} -liconv"
 fi
 
+if [[ ${target_platform} == osx-* ]]; then
+  rm -rf "${BUILD_PREFIX}/include/unicode"
+fi
+
 ./configure --prefix="${PREFIX}" \
             --build=${BUILD} \
             --host=${HOST} \
